@@ -1,5 +1,8 @@
 package br.projeto.doti.springbootprojetoimportdoti.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 
@@ -55,8 +58,16 @@ public class Controller {
 	}
 	
 	@GetMapping("/eventos/hostname/datas/{data1}/{data2}")
-    public ResponseEntity<List<?>> ListarHostnameEventoData(@PathVariable String data1,@PathVariable String data2){
-        return ResponseEntity.ok(eventService.ListarHostnameEventoData(data1, data2)) ;
+    public ResponseEntity<List<Evento>> ListarHostnameEventoData(@PathVariable String data1,@PathVariable String data2) throws ParseException{
+	//	List<String> lista = eventService.ListarHostnameEventoData(data1, data2);
+		System.out.println(data1 + " : " + data2);
+		Date dataini = new SimpleDateFormat("yyyy-mm-dd").parse(data1);
+		Date datafim = new SimpleDateFormat("yyyy-mm-dd").parse(data2);
+		List<Evento> lista = eventService.ListarEventosPorDatas(dataini, datafim);
+
+		return ResponseEntity.ok(lista) ;
         
 	}
+
+
 }
