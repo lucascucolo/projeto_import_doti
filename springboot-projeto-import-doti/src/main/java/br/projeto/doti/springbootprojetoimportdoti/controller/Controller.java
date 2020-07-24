@@ -2,7 +2,6 @@ package br.projeto.doti.springbootprojetoimportdoti.controller;
 
 import java.util.List;
 
-import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -50,14 +49,14 @@ public class Controller {
 	}
 	
 	@GetMapping("/eventos/count/datas/{data1}/{data2}")
-    public ResponseEntity<List<Table>> ContarEventosPorDescricaoEntreDatas(@PathVariable String data1, @PathVariable String data2) {
+    public ResponseEntity<List<?>> ContarEventosPorDescricaoEntreDatas(@PathVariable String data1, @PathVariable String data2) {
         return ResponseEntity.ok(eventService.ContarEventosPorDescricaoEntreDatas(data1, data2) );
         
 	}
 	
-	@GetMapping("/eventos/count/data/{data}")
-    public ResponseEntity<List<Evento>> ContarEventosDataEspecifica(@PathVariable String data){
-        return ResponseEntity.ok(eventService.ContarEventosDataEspecifica(data));
+	@GetMapping("/eventos/hostname/datas/{data1}/{data2}")
+    public ResponseEntity<List<?>> ListarHostnameEventoData(@PathVariable String data1,@PathVariable String data2){
+        return ResponseEntity.ok(eventService.ListarHostnameEventoData(data1, data2)) ;
         
 	}
 }

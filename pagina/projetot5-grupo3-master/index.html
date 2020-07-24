@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/login.css">
+
+    <script src="/js/login.js"></script>
+    <script src="/js/jquery-3.5.1.min.js"></script>
+
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="container d-flex h-100"> <!-- Para centralizar na vertical -->
+        <div class="row align-items-center w-100"> <!-- Para centralizar na horizontal -->
+            <div class="col-8 mx-auto"> <!-- Usar coluna com 8 das 12 disponíveis, com margem automática -->
+                <div class="container">
+                    <div class="login-container">
+                            <div id="output"></div>
+                            <div class="avatar"></div>
+                            <div class="form-box">
+                                <form action="" method="">
+                                    <input type="text" placeholder="e-mail / racf" id="txtUser">
+                                    <input type="password" class="form-control" placeholder="senha" id="txtSenha">
+                                    <button class="btn btn-info btn-block login" type="submit" onclick="fazerLogin(event)">Login</button>
+                                </form>
+                                <a href="#" class="forgot-password">
+                                    Esqueceu a senha?
+                                </a>
+                            </div>
+                        </div>
+                        
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

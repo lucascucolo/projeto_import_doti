@@ -2,7 +2,6 @@ package br.projeto.doti.springbootprojetoimportdoti.service;
 
 import java.util.List;
 
-import javax.persistence.Table;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,12 +21,14 @@ public class EventoServiceImp implements IEventoService {
     }
 
     @Override
-    public List<Table> ContarEventosPorDescricaoEntreDatas(String data1, String data2) {
+    public List<?> ContarEventosPorDescricaoEntreDatas(String data1, String data2) {
         return repo.countByDescricaEventosBetweenDate(data1, data2);
     }
 
     @Override
-    public List<Evento> ContarEventosDataEspecifica(String data) {
-        return repo.countByDescricaEventosEspecificDate(data);
+    public List<?> ListarHostnameEventoData(String data1, String data2) {
+        return repo.findHostnameEventoData(data1, data2);
     }
+
+
 }
